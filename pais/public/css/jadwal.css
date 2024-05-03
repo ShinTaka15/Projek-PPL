@@ -1,0 +1,198 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.content {
+  display: flex;
+  height: 100%;
+  width: 80%;
+  background: url(../../public/images/bg_jadwal.png);
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  align-items: baseline;
+  /* filter: blur(8px); */
+}
+.heading {
+  width: 100%;
+  margin-top: 38px;
+  margin-left: 52px;
+  margin-bottom: 40px;
+}
+.col {
+  margin-bottom: 50px;
+}
+.card {
+  cursor: pointer;
+}
+.card-text {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+/* --Sidebar-- */
+.sidebar {
+  width: 20%;
+  padding: 20px;
+  position: fixed;
+  background-color: #ffffff;
+  height: 100%;
+  right: 0;
+  top: 0;
+}
+.sidebar .logo {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  background-color: #fafafa;
+}
+
+.logo p {
+  width: 100%;
+  padding-top: 10px;
+  justify-content: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar li {
+  margin-bottom: 10px;
+}
+.sidebar li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+.sidebar li a:hover {
+  background-color: #e0e0e0;
+}
+.sidebar li.parent .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f0f0f0;
+  min-width: 100%;
+  z-index: 1;
+}
+.sidebar li.parent.active .dropdown-content {
+  display: block;
+}
+.sidebar li.parent .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.wrapper {
+  height: 500px;
+  width: 850px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ffffff;
+  border-radius: 25px;
+  font-family: sans-serif;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+}
+
+.toggle {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.kolam {
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 15px; /* Increased margin-bottom */
+}
+
+.nama-kolam {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.time {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weight {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+tfoot td {
+  padding: 12px;
+  border: none;
+}
+
+.kembali {
+  background-color: #ffc107; /* Orange color */
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px; /* Increased padding */
+}
+.edit {
+  align-items: right;
+}
+.edit,
+.tambah {
+  background-color: #4caf50; /* Green color */
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px; /* Increased padding */
+}
+
+.btn-kembali,
+.btn-edit,
+.btn-tambah {
+  background-color: transparent; /* Remove default button background */
+  border: none; /* Remove default button border */
+  padding: 10px 15px; /* Consistent padding with other buttons */
+  border-radius: 5px; /* Rounded corners for a softer look */
+  font-weight: bold;
+}
+
+.btn-kembali {
+  background-color: #ffc107; /* Orange color */
+  color: white;
+}
+
+.btn-edit {
+  background-color: #4caf50; /* Green color */
+  color: white;
+}
+
+.btn-tambah {
+  background-color: #2196f3; /* Blue color */
+  color: white;
+  height: 80px;
+  width: 80px;
+  border-radius: 30px;
+}
+
+.active {
+  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  text-decoration: underline;
+}

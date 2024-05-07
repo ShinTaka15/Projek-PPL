@@ -1,6 +1,6 @@
 <?php
 
-class penjadwalan extends Controller{
+class c_penjadwalan extends Controller{
 
     public function showPenjadwalan()
     {
@@ -83,7 +83,7 @@ class penjadwalan extends Controller{
         $data['takaranAll'] = $jadwalKolam->getDataTakaranAll();
         unset($jadwal); 
         // Memuat view dengan data yang telah diproses
-        $this->view('user/jadwal_mod', $data);  
+        $this->view('user/jadwal_kolam', $data);  
         $this->view('template/sidebar');
     }
 

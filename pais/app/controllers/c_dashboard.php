@@ -1,6 +1,6 @@
 <?php
 
-class dashboard extends Controller {
+class c_dashboard extends Controller {
 
     public function showDashboard()
     {

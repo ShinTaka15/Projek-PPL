@@ -135,7 +135,7 @@ function updateData(waktu, id_takaran, id_jadwal) {
     console.log("ID Takaran: " + id_takaran);
     // Lakukan request AJAX untuk mengirimkan data ke server
     $.ajax({
-            url: '<?= BASEURL ?>/?controller=user&method=jadwal_mod&params=<?= $data['params'] ?>', // Ganti dengan URL yang sesuai
+            url: '<?= BASEURL ?>/?controller=c_penjadwalan&method=jadwal_kolam&params=<?= $data['params'] ?>', // Ganti dengan URL yang sesuai
             type: 'POST',
             data: {
                 waktuUpdate: waktu,
@@ -173,7 +173,7 @@ function updateData(waktu, id_takaran, id_jadwal) {
 
 function refreshDiv() {
     $('#reloadcard').load(
-        '<?= BASEURL ?>/?controller=user&method=cardJadwal&params=<?=$data['params']?>',
+        '<?= BASEURL ?>/?controller=c_penjadwalan&method=cardJadwal&params=<?=$data['params']?>',
         function(
             response, status,
             xhr) {
@@ -183,7 +183,7 @@ function refreshDiv() {
         });
 
     $('#reloadcardupdate').load(
-        '<?= BASEURL ?>/?controller=user&method=cardUpdate&params=<?=$data['params']?>',
+        '<?= BASEURL ?>/?controller=c_penjadwalan&method=cardUpdate&params=<?=$data['params']?>',
         function(
             response, status,
             xhr) {
@@ -238,7 +238,7 @@ $(document).ready(function() {
     function updateToggle(id_jadwal, isChecked) {
         // Lakukan request AJAX untuk mengirimkan data ke server
         $.ajax({
-                url: '<?= BASEURL ?>/?controller=user&method=jadwal_mod&params=<?= $data['params'] ?>', // Ganti dengan URL yang sesuai
+                url: '<?= BASEURL ?>/?controller=c_penjadwalan&method=jadwal_kolam&params=<?= $data['params'] ?>', // Ganti dengan URL yang sesuai
                 type: 'POST',
                 data: {
                     id_jadwal: id_jadwal,
@@ -277,7 +277,7 @@ $(document).ready(function() {
 
     function refreshDiv() {
         $('#reloadcard').load(
-            '<?= BASEURL ?>/?controller=user&method=cardJadwal&params=<?=$data['params']?>',
+            '<?= BASEURL ?>/?controller=c_penjadwalan&method=cardJadwal&params=<?=$data['params']?>',
             function(
                 response, status,
                 xhr) {
@@ -287,7 +287,7 @@ $(document).ready(function() {
             });
 
         $('#reloadcardupdate').load(
-            '<?= BASEURL ?>/?controller=user&method=cardUpdate&params=<?=$data['params']?>',
+            '<?= BASEURL ?>/?controller=c_penjadwalan&method=cardUpdate&params=<?=$data['params']?>',
             function(
                 response, status,
                 xhr) {

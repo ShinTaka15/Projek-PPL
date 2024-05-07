@@ -129,7 +129,7 @@ $('#createData').click(function() {
 
 function createData(waktu, id) {
     $.ajax({
-            url: '<?= BASEURL ?>/?controller=user&method=jadwal_mod&params=<?= $data['params'] ?>',
+            url: '<?= BASEURL ?>/?controller=c_penjadwalan&method=jadwal_kolam&params=<?= $data['params'] ?>',
             type: 'POST',
             data: {
                 waktu: waktu,
@@ -170,7 +170,7 @@ function createData(waktu, id) {
 
 function refreshDiv() {
     $('#reloadcard').load(
-        '<?= BASEURL ?>/?controller=user&method=cardJadwal&params=<?=$data['params']?>',
+        '<?= BASEURL ?>/?controller=c_penjadwalan&method=cardJadwal&params=<?=$data['params']?>',
         function(
             response, status,
             xhr) {
@@ -180,7 +180,7 @@ function refreshDiv() {
         });
 
     $('#reloadcardupdate').load(
-        '<?= BASEURL ?>/?controller=user&method=cardUpdate&params=<?=$data['params']?>',
+        '<?= BASEURL ?>/?controller=c_penjadwalan&method=cardUpdate&params=<?=$data['params']?>',
         function(
             response, status,
             xhr) {

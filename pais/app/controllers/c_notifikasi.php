@@ -1,6 +1,6 @@
 <?php
 
-class notifikasi extends Controller {
+class c_notifikasi extends Controller {
 
     public function showNotifikasi()
     {

@@ -1,6 +1,6 @@
 <?php
 
-class akun extends Controller {
+class c_akun extends Controller {
 
     public function showAkun()
     {

@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://localhost/PROJEK-PPL-PAIS/pais/public');
+define('BASEURL', 'http://localhost/PROJEK-PPL/pais/public');
 
 //Database
 define('DB_HOST', 'localhost');

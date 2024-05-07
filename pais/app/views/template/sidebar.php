@@ -7,25 +7,25 @@
         <hr />
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="?controller=dashboard&method=showDashboard" class="nav-link link-dark" aria-current="page">
+                <a href="?controller=c_dashboard&method=showDashboard" class="nav-link link-dark" aria-current="page">
                     <i class="bi bi-house"></i>
                     Dashboard
                 </a>
             </li>
             <li>
-                <a href="?controller=akun&method=showAkun" class="nav-link link-dark">
+                <a href="?controller=c_akun&method=showAkun" class="nav-link link-dark">
                     <i class="bi bi-person"></i>
                     Akun
                 </a>
             </li>
             <li>
-                <a href="?controller=laporan&method=showLaporan" class="nav-link link-dark">
+                <a href="?controller=c_laporan&method=showLaporan" class="nav-link link-dark">
                     <i class="bi bi-file-earmark"></i>
                     Pelaporan
                 </a>
             </li>
             <li>
-                <a href="?controller=penjadwalan&method=showPenjadwalan" class="nav-link link-dark">
+                <a href="?controller=c_penjadwalan&method=showPenjadwalan" class="nav-link link-dark">
                     <i class="bi bi-calendar2"></i>
                     Penjadwalan
                 </a>
@@ -37,8 +37,8 @@
                     <i class="bi bi-chevron-down"></i>
                 </a>
                 <ul class="dropdown-content">
-                    <li><a href="?controller=notifikasi&method=showNotifikasi" class="link-dark rounded">Pesan</a></li>
-                    <li><a href="?controller=notifikasi&method=showStokPakan" class="link-dark rounded">Stok Pakan</a></li>
+                    <li><a href="?controller=c_notifikasi&method=showNotifikasi" class="link-dark rounded">Pesan</a></li>
+                    <li><a href="?controller=c_notifikasi&method=showStokPakan" class="link-dark rounded">Stok Pakan</a></li>
                 </ul>
             </li>
         </ul>

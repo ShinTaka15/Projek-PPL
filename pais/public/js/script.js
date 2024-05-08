@@ -16,10 +16,9 @@ function showWarning() {
   });
 }
 
+// Mengubah tampilan jam menjadi inputan waktu saat Chevron-down diklik
 function toggleDropdown(num) {
   var dropdownMenu = document.getElementById('dropdownMenu' + num);
   dropdownMenu.classList.toggle('show');
   document.querySelector('.toggle-text').innerHTML = '<input type="time" class="form-control fs-4 text-center" id="waktu1" />';
 }
-
-// Mengubah tampilan jam menjadi inputan waktu saat Chevron-down diklik

@@ -23,7 +23,6 @@
                                 class="form-control fw-semibold fs-4 <?php if ($jadwal['is_active'] == 0): ?> text-secondary <?php endif; ?>"
                                 value="<?php echo $jadwal['waktu']; ?>" <?php if ($jadwal['is_active'] == 0): ?>
                                 readonly <?php endif; ?> />
-
                         </div>
                         <div class="pt-3 pb-3">
                             <div style="list-style-type: none;">
@@ -45,8 +44,6 @@
                                             </label>
                                         </li>
                                         <?php endforeach; ?>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -110,23 +107,6 @@ function simpanData(id_jadwal) {
     }
     <?php endforeach; ?>
     updateData(waktu, id_takaran, id_jadwal);
-    // KALO BUTUH KONFIRMASI KLIK BAWAH
-    // Swal.fire({
-    //     text: 'Apakah anda ingin mengubah data?',
-    //     icon: 'question',
-    //     showCancelButton: true,
-    //     confirmButtonText: 'Iya',
-    //     cancelButtonText: 'Tidak',
-    //     reverseButtons: true,
-    // }).then((result) => {
-    //     if (result.isConfirmed) {
-    //         updateData(waktu, id_takaran, id_jadwal);
-    //     } else {
-    //         $("#waktu" + id_jadwal).val(""); // Mengosongkan nilai input waktu
-    //         $("input[name='gram_" + id_jadwal + "']").prop('checked',
-    //             false); // Menghilangkan seleksi radio button
-    //     }
-    // });
 }
 
 
@@ -205,27 +185,6 @@ $(document).ready(function() {
             $(this).closest('.modal').modal('hide');
             // Panggil fungsi updateToggle untuk memperbarui toggle
             updateToggle(id_jadwal, isChecked);
-
-            // KALO BUTUH KONFIRMASI KLIK BAWAH
-            // // Jika switch tidak dicentang, tampilkan konfirmasi sebelum menutup modal
-            // Swal.fire({
-            //     text: 'Apakah anda ingin mematikan alat?',
-            //     icon: 'question',
-            //     showCancelButton: true,
-            //     confirmButtonText: 'Iya',
-            //     cancelButtonText: 'Tidak',
-            //     reverseButtons: true,
-            // }).then((result) => {
-            //     if (result.isConfirmed) {
-            //         // Jika dikonfirmasi, jalankan perintah untuk menutup modal
-            //         $(this).closest('.modal').modal('hide');
-            //         // Panggil fungsi updateToggle untuk memperbarui toggle
-            //         updateToggle(id_jadwal, isChecked);
-            //     } else {
-            //         // Jika dibatalkan, reset kembali toggle ke posisi awal
-            //         $(this).prop('checked', !isChecked);
-            //     }
-            // });
         } else {
             // Jika switch dicentang, langsung jalankan perintah untuk menutup modal
             $(this).closest('.modal').modal('hide');
@@ -272,8 +231,6 @@ $(document).ready(function() {
                 });
             });
     }
-
-
 
     function refreshDiv() {
         $('#reloadcard').load(

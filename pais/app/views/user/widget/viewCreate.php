@@ -1,4 +1,4 @@
-<!-- Modal Tambah Data -->
+<!-- Widget Tambah Data -->
 <div class="modal fade" id="tambahMODAL" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-5">
@@ -67,7 +67,6 @@ $('#createData').click(function() {
         });
     } else {
         // Lakukan perulangan pada data penjadwalan yang sudah ada
-        // Lakukan perulangan pada data penjadwalan yang sudah ada
         <?php foreach ($data['jadwal'] as $jadwal): ?>
         <?php
         // Ambil waktu dari data penjadwalan dan hapus ":00" belakangnya
@@ -104,23 +103,6 @@ $('#createData').click(function() {
             $("input[name='gram']").prop('checked', false);
             increaseJadwalCount();
             displayJadwalCount()
-            // // Menampilkan konfirmasi penyimpanan data
-            // Swal.fire({
-            //     text: 'Apakah anda ingin menambah data?',
-            //     icon: 'question',
-            //     showCancelButton: true,
-            //     confirmButtonText: 'Iya',
-            //     cancelButtonText: 'Tidak',
-            //     reverseButtons: true,
-            // }).then((result) => {
-            //     if (result.isConfirmed) {
-
-            //     } else {
-            //         console.log('Pembatalan penyimpanan data');
-            //         $('#waktu').val('');
-            //         $("input[name='gram']").prop('checked', false);
-            //     }
-            // });
         }
     }
 });

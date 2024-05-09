@@ -54,7 +54,7 @@
                 <div class="col-sm-6">
                     <div class="d-flex justify-content-center">
                         <div class="card custom-card"
-                            onclick="location.href='?controller=c_penjadwalan&method=jadwal_kolam&params=<?php echo urlencode($kolam['id_kolam']); ?>'">
+                            onclick="location.href='?controller=c_jadwal_kolam&method=jadwal_kolam&params=<?php echo urlencode($kolam['id_kolam']); ?>'">
                             <div class="card-header">
                                 <p class="card-title text-start">Kolam <?php echo $index; ?></p>
                             </div>

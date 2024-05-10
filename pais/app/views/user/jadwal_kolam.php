@@ -65,11 +65,11 @@
     </div>
 
     <?php
-    require_once 'widget/viewCreate.php'
+    require_once 'widget/create.php'
     ?>
     <div class="" id="reloadcardupdate">
         <?php
-     require_once 'widget/viewUpdate.php'
+     require_once 'widget/update.php'
     ?>
     </div>
 

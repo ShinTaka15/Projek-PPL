@@ -147,7 +147,7 @@ class c_jadwal_kolam extends Controller {
 
         $data['takaranAll'] = $jadwalKolam->getDataTakaranAll();
         unset($jadwal); 
-        $this->view('user/widget/viewUpdate', $data);
+        $this->view('user/widget/update', $data);
 
     }
 }

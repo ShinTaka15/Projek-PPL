@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Poppins diikuti oleh sans-serif sebagai fallback font */
+  position: relative;
+  padding-right: 280px;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+  /* Warna putih dengan opacity 25% */
+  z-index: -1; /* Membawa pseudo-element ke belakang konten utama */
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../public/images/bg_jadwal.png') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -2; /* Menempatkan gambar latar belakang di belakang pseudo-element lainnya */
+}
+
+.sidebar {
+  width: 20%;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  right: 0;
+  top: 0;
+}
+
+.sidebar .logo {
+  display: flex;
+  gap: 20px;
+  background-color: #fafafa;
+}
+
+.logo p {
+  padding-top: 10px;
+  color: #103b50;
+  text-align: center; /* Menengahkan teks */
+}
+
+.sidebar li.parent .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f0f0f0;
+  min-width: 100%;
+  z-index: 1;
+}
+
+.sidebar li.parent.active .dropdown-content {
+  display: block;
+}
+
+.sidebar li.parent .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.main-content {
+  font-family: 'Poppins', sans-serif;
+  z-index: 9999; /* Poppins diikuti oleh sans-serif sebagai fallback font */
+}
+.form-check-input:checked {
+  background-color: grey !important;
+  border-color: grey !important;
+}
+
+/* CSS untuk mengubah warna border saat checkbox aktif */
+.form-check-input:active,
+.form-check-input:focus {
+  border-color: grey !important;
+  outline-color: grey !important;
+}
+
+/* CSS untuk mengubah warna lingkaran saat checkbox tidak aktif */
+/* CSS untuk mengubah warna lingkaran saat checkbox aktif */
+.form-check-input:checked:after {
+  background-color: grey !important;
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box {
+  width: 150px;
+  height: 50px;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.label-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -10,6 +10,7 @@ class c_notifikasi extends Controller {
 
     public function showStokPakan()
     {
-        
+        $this->view('user/stok_pakan');
+        $this->view('template/sidebar');
     }
 }

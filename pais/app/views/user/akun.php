@@ -14,7 +14,7 @@
     <!-- Main content -->
     <div class="main-content">
         <!-- Header -->
-        <div class="container mt-5 mx-5 mb-5">
+        <div class="container mt-5 mx-5 ">
             <h1 class="text-white">Selamat Datang, Suhadi</h1>
             <p class="text-white fs-4">Pakan Ikan Otomatis</p>
             <div class="login-container">

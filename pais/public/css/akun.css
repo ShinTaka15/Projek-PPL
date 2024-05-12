@@ -20,7 +20,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: rgba(255, 255, 255, 0.25); */
+  background-color: rgba(255, 255, 255, 0.25);
   /* Warna putih dengan opacity 25% */
   z-index: -1; /* Membawa pseudo-element ke belakang konten utama */
 }
@@ -82,16 +82,7 @@ body::after {
   font-family: 'Poppins', sans-serif;
   z-index: 9999; /* Poppins diikuti oleh sans-serif sebagai fallback font */
 }
-.container {
-  background-color: rgba(255, 255, 255, 0.25);
-  height: 650px;
-  border-radius: 24px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0; */
-}
+
 .form-check-input:checked {
   background-color: grey !important;
   border-color: grey !important;
@@ -120,7 +111,7 @@ body::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto; /* Menempatkan container di tengah */
+  margin: auto;
 }
 
 .login-container .form-field {
@@ -142,7 +133,7 @@ body::after {
 }
 
 .login-container .form-field input[type="password"] {
-  font-family: 'password', sans-serif; /* Trick untuk menampilkan bintang-bintang pada password */
+  font-family: 'password', sans-serif; /* Menampilkan bintang-bintang pada password */
 }
 
 .login-button {

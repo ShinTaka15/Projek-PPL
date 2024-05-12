@@ -15,8 +15,10 @@
     <div class="main-content">
         <!-- Header -->
         <div class="container mt-5 mx-5 ">
-            <h1 class="text-white">Selamat Datang, Suhadi</h1>
-            <p class="text-white fs-4">Pakan Ikan Otomatis</p>
+            <div class="container">
+                <h1 class="text-white">Selamat Datang, Suhadi</h1>
+                <p class="text-white fs-4">Pakan Ikan Otomatis</p>
+            </div>
             <div class="login-container">
                 <div class="form-field">
                     <i class="bi bi-person-circle" style="font-size: 100px; width: 100px; height: 100px;"></i>

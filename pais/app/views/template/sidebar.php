@@ -37,7 +37,7 @@
                     <i class="bi bi-chevron-down"></i>
                 </a>
                 <ul class="dropdown-content">
-                    <li><a href="?controller=c_notifikasi&method=showNotifikasi" class="link-dark rounded">Pesan</a></li>
+                    <li><a href="?controller=c_notifikasi&method=showPesan" class="link-dark rounded">Pesan</a></li>
                     <li><a href="?controller=c_notifikasi&method=showStokPakan" class="link-dark rounded">Stok Pakan</a></li>
                 </ul>
             </li>

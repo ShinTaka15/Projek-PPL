@@ -25,7 +25,6 @@
             </svg>
         </div>
     </div>
-
 </div>
 <!-- Divider -->
 <hr class="text-white">

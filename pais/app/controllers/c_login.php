@@ -3,22 +3,22 @@
 class c_login extends Controller {
 
     public function showLogin() {
-        
+        $this->view('user/login');
     }
 
     public function processLogin($username, $password) {
-        $loginModel = new LoginModel();
+        $loginModel = $this->model('m_login');
 
         // Memeriksa kredensial menggunakan model
-        $isValid = $loginModel->checkCredentials($username, $password);
+        $isValid = $loginModel->getDataAkun($username, $password);
 
         // Jika kredensial valid, lanjutkan ke halaman selanjutnya
         if ($isValid) {
-            header("Location: ../view/dashboard.php");
+            header("Location:?controller=c_dashboard&method=showDashboard");
             exit;
         } else {
             // Jika kredensial tidak valid, tampilkan pesan kesalahan
-            header("Location: ../view/login.php?error=true");
+            header("Location:?controller=c_login&method=showLogin?error=true");
             exit;
         }
     }
@@ -35,7 +35,7 @@ class c_login extends Controller {
         $password = $_POST['password'];
 
         // Buat instance dari controller dan panggil method processLogin
-        $loginController = new LoginController();
+        $loginController = new c_login();
         $loginController->processLogin($username, $password);
 
 }

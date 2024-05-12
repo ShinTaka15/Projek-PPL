@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/gambar.jpg');
+    background-color: rgba(255, 255, 255, 0.5); /* Untuk efek blur dan kejelasan */
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    backdrop-filter: blur(2px); /* Efek blur */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Diperlukan untuk child dengan position absolute */
+  }
+
+  .content-overlay {
+    position: absolute;
+    background-color: rgb(255, 255, 255); /* Untuk efek blur dan kejelasan */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px; /* Lebar konten */
+    height: 530px; /* Tinggi konten */
+    border-radius: 24px;
+    text-align: center;
+  }
+
+  .close-icon {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    font-size: 40px;
+    font: small-caps;
+    cursor: pointer;
+  }
+
+  .content-text {
+    position: absolute;
+    top: 40px; /* Menyesuaikan jarak dari ikon close */
+    left: 30px; /* Menyesuaikan posisi ke kiri */
+    font-size: 24px;
+  }
+
+  .input-container {
+    margin-top: 125px; /* Jarak dari tulisan "Login" */
+    left: 30px;
+    text-align: left;
+  }
+
+  .input-field {
+    width: 300px;
+    height: 18px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .input-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+    position: relative;
+    left: 30px; /* Menyesuaikan jarak dari sisi kiri */
+    color: rgb(66, 66, 66);
+  }
+
+  .login-button {
+    background-color: rgba(1, 1, 1, 0.25);
+    color: #ffffff;
+    width: 320px; /* Menyesuaikan dengan lebar input field */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 32px;
+    font-size: 16px; /* Menyesuaikan dengan ukuran font input field */
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px; /* Menyesuaikan jarak dari input field */
+  }
+
+  .login-button:hover {
+    background-color: rgba(92, 94, 100, 0.8);
+  }
+
+  .remember-me {
+    text-align: left;
+    font-size: 15px;
+    margin-left: 30px; /* Menyesuaikan jarak dari sisi kiri */
+    margin-top: 7px; /* Menyesuaikan jarak dari tombol login */
+    color: rgb(11, 11, 11);
+  }
+
+  .remember-me input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 10px; /* Menyesuaikan jarak dari tombol login */
+  }
+
+  .lupa-akun {
+    margin-left: 5px; /* Menyesuaikan jarak dari sisi kiri */
+    margin-top: 50px;
+    font-size: small;
+}
+
+.popup {
+  display: none; /* Mulai tersembunyi */
+  position: fixed; /* Tetap di tengah-tengah */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); /* Transparan */
+  z-index: 999; /* Atas konten lain */
+  overflow: auto; /* Scroll jika popup terlalu besar */
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 36%;
+  height: 20%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.popup-content p {
+  font-size: 24px;
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}  

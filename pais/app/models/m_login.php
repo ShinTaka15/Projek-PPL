@@ -1,6 +1,6 @@
 <?php 
 
-class m_login{
+class m_login {
 
     private $db;
 
@@ -9,8 +9,8 @@ class m_login{
         $this->db = new Database;
     }
 
-    public function getDataAkun($id){
-        $selectQuery = "SELECT * FROM jadwal WHERE id_kolam=$id";
+    public function getDataAkun($username, $password){
+        $selectQuery = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
         $this->db->query($selectQuery);
         $this->db->execute();
         return $this->db->single();

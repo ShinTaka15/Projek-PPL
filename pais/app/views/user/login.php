@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PAIS</title>
-  <link rel="stylesheet" href="masuk.css">
+  <title>Login</title>
+  <link rel="icon" type="image/x-icon" href="<?= BASEURL; ?>/images/logo_ikan.png" />
+  <link rel="stylesheet" href="<?= BASEURL ?>/css/masuk.css">
 </head>
 <body>
 <div class="content-overlay" id="content-overlay">
-    <i class="close-icon" onclick="window.location.href = '../index.html';">&times;</i>
+    <i class="close-icon" onclick="window.location.href = '?controller=c_landing_page&method=showLandingPage';">&times;</i>
     <div class="content">
-      <p class="content-text">Login</p>
+      <p class="content-text">Masuk</p>
       <div class="input-container">
-        <form method="post" action="../controller/loginController.php">
-          <label for="email" class="input-label">Username</label>
+        <form method="post" action="?controller=c_login&method=processLogin">
+          <label for="email" class="input-label">Nama Pengguna</label>
           <input type="text" id="email" name="email" class="input-field">
-          <label for="password" class="input-label">Password</label>
+          <label for="password" class="input-label">Kata Sandi</label>
           <input type="password" id="password" name="password" class="input-field">
-          <button type="submit" class="login-button">Login</button>
+          <button type="submit" class="login-button">Masuk</button>
         </form>
       </div>
       <div class="remember-me">

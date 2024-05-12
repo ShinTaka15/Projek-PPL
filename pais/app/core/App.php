@@ -1,8 +1,8 @@
 <?php
 
 class App {
-    protected $controller = 'c_dashboard';
-    protected $method = 'showDashboard';
+    protected $controller = 'c_login';
+    protected $method = 'showLogin';
     protected $params = [];
 
     public function __construct() 

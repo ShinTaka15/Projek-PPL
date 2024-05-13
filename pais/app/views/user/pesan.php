@@ -33,10 +33,11 @@
                     <div class="card-body">
                         <!-- Isi Pesan -->
                         <div class="card custom-card-child"
-                            style="background-color: #FFFFFF; overflow-y: auto; max-height: 500px;">
-                            <div class="card-body" id="reloadcard">
+                        style="background-color: #FFFFFF; overflow-y: auto; max-height: 500px;">
+                        <div class="card-body" id="reloadcard">
+                                <?php foreach ($data['notifikasi'] as $pesan): ?>
                                 <div class="d-flex justify-content-between ms-3 me-3">
-                                    <h5 class="text-black">Segera isi kembali pakan, stok hampir habis</h5>
+                                    <h5 class="text-black"><?php echo $pesan['pesan']; ?></h5>
                                     <div class="row text-white">
                                         <div class="col-auto">
                                             <h5 class="text-black d-inline-block me-2">
@@ -47,30 +48,7 @@
                                 </div>
                                 <!-- Divider -->
                                 <hr class="text-black">
-                                <div class="d-flex justify-content-between ms-3 me-3">
-                                    <h5 class="text-black">Segera isi kembali pakan, stok hampir habis</h5>
-                                    <div class="row text-white">
-                                        <div class="col-auto">
-                                            <h5 class="text-black d-inline-block me-2">
-                                                19 Mei
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Divider -->
-                                <hr class="text-black">
-                                <div class="d-flex justify-content-between ms-3 me-3">
-                                    <h5 class="text-black">Segera isi kembali pakan, stok hampir habis</h5>
-                                    <div class="row text-white">
-                                        <div class="col-auto">
-                                            <h5 class="text-black d-inline-block me-2">
-                                                19 Mei
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Divider -->
-                                <hr class="text-black">
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>

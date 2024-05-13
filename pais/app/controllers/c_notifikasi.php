@@ -4,7 +4,10 @@ class c_notifikasi extends Controller {
 
     public function showPesan()
     {
-        $this->view('user/pesan');
+        $pesanModel = $this->model('m_pesan');
+        $data['notifikasi'] = $pesanModel->getPesan();
+
+        $this->view('user/pesan', $data);
         $this->view('template/sidebar');
     }
 

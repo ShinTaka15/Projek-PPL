@@ -9,14 +9,12 @@ class m_jadwal{
         $this->db = new Database;
     }
 
-
     public function getDataJadwal($id){
         $selectQuery = "SELECT * FROM jadwal WHERE id_kolam=$id";
         $this->db->query($selectQuery);
         $this->db->execute();
         return $this->db->all();
     }
-    
 
     public function getDataTakaran($id){
         // Query untuk mengambil data takaran berdasarkan id

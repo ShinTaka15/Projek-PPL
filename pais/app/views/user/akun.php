@@ -19,20 +19,22 @@
                 <h1 class="text-white">Selamat Datang, Suhadi</h1>
                 <p class="text-white fs-4">Pakan Ikan Otomatis</p>
             </div>
+            <?php if(isset($data['id'])): ?>
             <div class="login-container">
                 <div class="form-field">
                     <i class="bi bi-person-circle" style="font-size: 100px; width: 100px; height: 100px;"></i>
                 </div>
                 <div class="form-field">
                     <label for="username">Nama Pengguna</label>
-                    <input type="text" id="username" value="Suhadi" readonly>
+                    <input type="text" id="username" value="<?php echo $data['id']['username']; ?>" readonly>
                 </div>
                 <div class="form-field">
                     <label for="password">Kata Sandi</label>
-                    <input type="password" id="password" value="password" readonly>
+                    <input type="password" id="password" value="<?php echo $data['id']['password']; ?>" readonly>
                 </div>
                 <button class="login-button">EDIT</button>
             </div>
+            <?php endif; ?>
         </div>
     </div>
     

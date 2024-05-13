@@ -1,8 +1,8 @@
 <?php
 
 class App {
-    protected $controller = 'c_login';
-    protected $method = 'showLogin';
+    protected $controller = 'c_landing_page';
+    protected $method = 'showLandingPage';
     protected $params = [];
 
     public function __construct() 

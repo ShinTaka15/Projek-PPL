@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li>
-                <a href="?controller=c_akun&method=showAkun" class="nav-link link-dark">
+                <a href="?controller=c_akun&method=showAkun&params=1" class="nav-link link-dark">
                     <i class="bi bi-person"></i>
                     Akun
                 </a>

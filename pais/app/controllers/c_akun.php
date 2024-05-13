@@ -4,12 +4,12 @@ class c_akun extends Controller {
 
     public function showAkun()
     {
-        $this->view('user/akun');
+        $akunModel = $this->model('m_akun');
+
+        $data['id'] = $akunModel->getDataAkun($_GET['params']);
+
+        $this->view('user/akun', $data);
         $this->view('template/sidebar');
     }
 
-    public function setDataAkun()
-    {
-        
-    }
 }

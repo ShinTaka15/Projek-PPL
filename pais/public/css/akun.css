@@ -150,3 +150,9 @@ body::after {
 .login-button:hover {
   background-color: #0056b3;
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 500px; /* Atur lebar sesuai kebutuhan */
+}

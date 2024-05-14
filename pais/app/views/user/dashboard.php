@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-3">
+            <!-- <div class="row mb-3">
                 <div class="col-sm">
                     <div class="d-flex justify-content-center">
                         <div class="card custom-card"
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 

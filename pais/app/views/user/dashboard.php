@@ -59,21 +59,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="row mb-3">
-                <div class="col-sm">
-                    <div class="d-flex justify-content-center">
-                        <div class="card custom-card"
-                            onclick="location.href='?controller=c_penjadwalan&method=showPenjadwalan'">
-                            <div class=" card-body d-flex align-items-center justify-content-center p-0">
-                                <img src="<?= BASEURL; ?>/images/laporan.jpeg" class="card-img-top rounded-2" style="width: 100%; height: auto;">
-                            </div>
-                            <div class="card-footer card-img-overlay">
-                                <h5 class="card-title d-flex align-items-center justify-content-center">LAPORAN</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 
@@ -84,5 +69,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </html>

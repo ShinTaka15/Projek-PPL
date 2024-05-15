@@ -2,6 +2,10 @@
 
 class c_login extends Controller {
 
+    public function showLandingPage() {
+        $this->view('user/landing_page');
+    }
+
     public function showLogin() {
         $this->view('user/login');
     }

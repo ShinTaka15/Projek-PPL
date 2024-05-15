@@ -38,10 +38,10 @@
                 <div class="card custom-card" style="background-color: #d9dada">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h3 class="text-start">Kolam <?php  echo $data['kolam'][0]['id_kolam']; ?></h3>
-                        <div class="form-check form-switch text-center align-content-center">
+                        <!-- <div class="form-check form-switch text-center align-content-center">
                             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
                                 checked />
-                        </div>
+                        </div> -->
                     </div>
                     <div class="card-body">
                         <h3 class="fw-bold ms-3"><?php  echo $data['kolam'][0]['nama_kolam']; ?></h3>

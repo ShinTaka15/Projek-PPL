@@ -18,25 +18,13 @@
                     Akun
                 </a>
             </li>
-            <!-- <li>
-                <a href="?controller=c_laporan&method=showLaporan" class="nav-link link-dark">
-                    <i class="bi bi-file-earmark"></i>
-                    Pelaporan
-                </a>
-            </li> -->
             <li>
                 <a href="?controller=c_penjadwalan&method=showPenjadwalan" class="nav-link link-dark">
                     <i class="bi bi-calendar2"></i>
                     Penjadwalan
                 </a>
             </li>
-            <li>
-                <a href="?controller=c_notifikasi&method=showPesan" class="nav-link link-dark">
-                    <i class="bi bi-bell"></i>
-                    Pesan
-                </a>
-            </li>
-            <!-- <li class="parent">
+            <li class="parent">
                 <a href="#" class="nav-link link-dark">
                     <i class="bi bi-bell"></i>
                     Notifikasi
@@ -44,9 +32,8 @@
                 </a>
                 <ul class="dropdown-content">
                     <li><a href="?controller=c_notifikasi&method=showPesan" class="link-dark rounded">Pesan</a></li>
-                    <li><a href="?controller=c_notifikasi&method=showStokPakan" class="link-dark rounded">Stok Pakan</a></li>
                 </ul>
-            </li> -->
+            </li>
         </ul>
         <hr />
     </div>

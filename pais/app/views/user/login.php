@@ -22,8 +22,8 @@
         </form>
       </div>
       <div class="remember-me">
-        <input type="checkbox" id="remember" name="remember">
-        <label for="remember">Remember me</label>
+        <!-- <input type="checkbox" id="remember" name="remember">
+        <label for="remember">Remember me</label> -->
         <div class="lupa-akun">
           <label for="lupa">Lupa akun Anda? Hubungi Kami</label>
         </div>

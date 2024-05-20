@@ -16,4 +16,16 @@ class c_notifikasi extends Controller {
         $this->view('user/stok_pakan');
         $this->view('template/sidebar');
     }
+
+    // public function addPesan()
+    // {
+    //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //         $message = $_POST['pesan'];
+    //         $pesanModel = $this->model('m_pesan');
+    //         $pesanModel->insertPesan($message);
+
+    //         header('Location:?controller=c_notifikasi&method=showPesan');
+    //         exit();
+    //     }
+    // }
 }

@@ -15,4 +15,11 @@ class m_pesan {
         $this->db->execute();
         return $this->db->all();
     }
+
+    // public function insertPesan($message) {
+    //     $insertQuery = "INSERT INTO notifikasi (message) VALUES (:message)";
+    //     $this->db->query($insertQuery);
+    //     $this->db->bind(':message', $message);
+    //     return $this->db->execute();
+    // }
 }

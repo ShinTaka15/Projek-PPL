@@ -71,4 +71,16 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script>
+    // Periksa apakah parameter success ada di URL dan tampilkan SweetAlert jika iya
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('success') && urlParams.get('success') === 'true') {
+      Swal.fire({
+        icon: 'success',
+        title: 'Berhasil!',
+        text: 'Anda berhasil masuk'
+      });
+    }
+    </script>
+
 </html>

@@ -1,0 +1,122 @@
+/* Importing Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Poppins diikuti oleh sans-serif sebagai fallback font */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures body takes full height of viewport */
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+  z-index: -1; /* Membawa pseudo-element ke belakang konten utama */
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../public/images/gambar.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -2; /* Menempatkan gambar latar belakang di belakang pseudo-element lainnya */
+}
+
+.content-overlay {
+  position: relative;
+  width: 380px;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8); /* Slight white background for readability */
+  padding: 20px;
+  border-radius: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px; /* Sesuaikan ukuran font */
+  cursor: pointer;
+}
+
+.content-text {
+  margin-top: 20px; /* Jarak dari atas overlay */
+  font-size: 24px;
+  margin-bottom: 20px; /* Jarak dari konten di bawahnya */
+}
+
+.input-container {
+  text-align: left;
+  width: 100%;
+}
+
+.input-field {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+  color: rgb(66, 66, 66);
+}
+
+.login-button {
+  background-color: rgba(1, 1, 1, 0.25);
+  color: #ffffff;
+  width: 320px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 32px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.login-button:hover {
+  background-color: rgba(92, 94, 100, 0.8);
+}
+
+.lupa-akun {
+  margin-top: 20px; /* Menyesuaikan jarak dari atas */
+  font-size: small;
+}

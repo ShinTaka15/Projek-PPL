@@ -18,28 +18,23 @@ class c_login extends Controller {
 
         // Jika kredensial valid, lanjutkan ke halaman selanjutnya
         if ($isValid) {
-            header("Location:?controller=c_dashboard&method=showDashboard");
+            header("Location:?controller=c_dashboard&method=showDashboard&success=true");
             exit;
         } else {
             // Jika kredensial tidak valid, tampilkan pesan kesalahan
-            header("Location:?controller=c_login&method=showLogin?error=true");
+            header("Location:?controller=c_login&method=showLogin&error=true");
             exit;
         }
     }
-
-    public function showError() {
-        // Tampilkan pesan error dengan JavaScript
-        echo "<script>document.getElementById('popup').style.display = 'block';</script>";
-    }
 }
 
-    // Ambil input dari form
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = $_POST['email'];
-        $password = $_POST['password'];
+// Ambil input dari form
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['email'];
+    $password = $_POST['password'];
 
-        // Buat instance dari controller dan panggil method processLogin
-        $loginController = new c_login();
-        $loginController->processLogin($username, $password);
-
+    // Buat instance dari controller dan panggil method processLogin
+    $loginController = new c_login();
+    $loginController->processLogin($username, $password);
 }
+?>

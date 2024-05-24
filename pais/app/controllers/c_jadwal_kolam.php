@@ -150,4 +150,20 @@ class c_jadwal_kolam extends Controller {
         $this->view('user/widget/update', $data);
 
     }
+
+    public function getJadwalJson()
+    {
+        if (isset($_GET['params'])) {
+            $jadwalKolam = $this->model('m_jadwal');
+            $data['jadwal'] = $jadwalKolam->getDataJadwal($_GET['params']);
+            foreach ($data['jadwal'] as &$jadwal) {
+                $takaran = $jadwalKolam->getDataTakaran($jadwal['id_takaran']);
+                $jadwal['takaran'] = $takaran;
+            }
+            unset($jadwal);
+            echo json_encode($data['jadwal']);
+        } else {
+            echo json_encode([]);
+        }
+    }
 }

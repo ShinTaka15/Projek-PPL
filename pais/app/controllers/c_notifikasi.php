@@ -17,15 +17,21 @@ class c_notifikasi extends Controller {
         $this->view('template/sidebar');
     }
 
-    // public function addPesan()
-    // {
-    //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //         $message = $_POST['pesan'];
-    //         $pesanModel = $this->model('m_pesan');
-    //         $pesanModel->insertPesan($message);
+    public function addPesan()
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST['pesan'])) {
+                $message = $_POST['pesan'];
+                $pesanModel = $this->model('m_pesan');
 
-    //         header('Location:?controller=c_notifikasi&method=showPesan');
-    //         exit();
-    //     }
-    // }
+                // Periksa apakah pesan sudah ada
+                if (!$pesanModel->isPesanExist($message)) {
+                    $pesanModel->insertPesan($message);
+                }
+
+                header('Location:?controller=c_notifikasi&method=showPesan');
+                exit();
+            }
+        }
+    }
 }

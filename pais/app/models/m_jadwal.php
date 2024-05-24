@@ -78,7 +78,4 @@ class m_jadwal{
     
         return 1;
     }
-    
-
-
 }

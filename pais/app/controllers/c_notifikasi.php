@@ -42,4 +42,3 @@ class c_notifikasi extends Controller {
         echo json_encode(['unread_count' => $unreadCount]);
     }
 }
-

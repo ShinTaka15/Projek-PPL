@@ -37,4 +37,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $loginController = new c_login();
     $loginController->processLogin($username, $password);
 }
-?>

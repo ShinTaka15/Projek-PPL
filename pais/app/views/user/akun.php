@@ -35,7 +35,7 @@
                 </div>
                 <button id="editButton" class="login-button" onclick="toggleEditMode()">EDIT</button>
                 <div class="button-container">
-                    <button id="backButton" class="login-button" style="display: none;" onclick="revertToOriginal()">TIDAK</button>
+                    <button id="backButton" class="login-button" style="display: none;" onclick="revertToOriginal()">BATAL</button>
                     <button id="saveButton" class="login-button" style="display: none;" onclick="sendDataToDatabase($('#username').val(), $('#password').val())">SIMPAN</button>
                 </div>
             </div>

@@ -17,18 +17,22 @@ class m_pesan {
     }
 
     public function insertPesan($message) {
-        $insertQuery = "INSERT INTO notifikasi (pesan, id_user) VALUES (:pesan, 1)";
+        $insertQuery = "INSERT INTO notifikasi (pesan, id_user, is_read) VALUES (:pesan, 1, 0)";
         $this->db->query($insertQuery);
         $this->db->bind(':pesan', $message);
         return $this->db->execute();
     }
 
-    public function isPesanExist($message) {
-        $selectQuery = "SELECT COUNT(*) as count FROM notifikasi WHERE pesan = :pesan";
-        $this->db->query($selectQuery);
-        $this->db->bind(':pesan', $message);
+    public function countUnread() {
+        $query = "SELECT COUNT(*) as unread_count FROM notifikasi WHERE is_read = 0";
+        $this->db->query($query);
         $this->db->execute();
-        $result = $this->db->single();
-        return $result['count'] > 0;
+        return $this->db->single()['unread_count'];
+    }
+
+    public function markAllAsRead() {
+        $query = "UPDATE notifikasi SET is_read = 1 WHERE is_read = 0";
+        $this->db->query($query);
+        return $this->db->execute();
     }
 }

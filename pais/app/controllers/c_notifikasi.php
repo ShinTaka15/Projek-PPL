@@ -6,9 +6,13 @@ class c_notifikasi extends Controller {
     {
         $pesanModel = $this->model('m_pesan');
         $data['notifikasi'] = $pesanModel->getPesan();
+        $data['unread_count'] = $pesanModel->countUnread();
+
+        // Mark all messages as read when the messages are viewed
+        $pesanModel->markAllAsRead();
 
         $this->view('user/pesan', $data);
-        $this->view('template/sidebar');
+        $this->view('template/sidebar', $data);
     }
 
     public function showStokPakan()
@@ -23,15 +27,19 @@ class c_notifikasi extends Controller {
             if (isset($_POST['pesan'])) {
                 $message = $_POST['pesan'];
                 $pesanModel = $this->model('m_pesan');
-
-                // Periksa apakah pesan sudah ada
-                if (!$pesanModel->isPesanExist($message)) {
-                    $pesanModel->insertPesan($message);
-                }
+                $pesanModel->insertPesan($message);
 
                 header('Location:?controller=c_notifikasi&method=showPesan');
                 exit();
             }
         }
     }
+
+    public function getUnreadCount()
+    {
+        $pesanModel = $this->model('m_pesan');
+        $unreadCount = $pesanModel->countUnread();
+        echo json_encode(['unread_count' => $unreadCount]);
+    }
 }
+

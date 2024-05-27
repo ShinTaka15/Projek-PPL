@@ -25,9 +25,14 @@
                 </a>
             </li>
             <li class="parent">
-                <a href="#" class="nav-link link-dark">
-                    <i class="bi bi-bell"></i>
-                    Notifikasi
+                <a href="#" class="nav-link link-dark d-flex justify-content-between align-items-center">
+                    <div>
+                        <i class="bi bi-bell"></i>
+                        Notifikasi
+                    </div>
+                    <?php if ($data['unread_count'] > 0): ?>
+                        <span class="badge bg-danger rounded-pill"><?= $data['unread_count']; ?></span>
+                    <?php endif; ?>
                     <i class="bi bi-chevron-down"></i>
                 </a>
                 <ul class="dropdown-content">
@@ -37,6 +42,7 @@
         </ul>
         <hr />
     </div>
+
 <script>
 const sidebar = document.querySelector('.sidebar');
 

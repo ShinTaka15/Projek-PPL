@@ -38,13 +38,6 @@
                                 <?php foreach ($data['notifikasi'] as $pesan): ?>
                                 <div class="d-flex justify-content-between ms-3 me-3">
                                     <h5 class="text-black"><?php echo $pesan['pesan']; ?></h5>
-                                    <!-- <div class="row text-white">
-                                        <div class="col-auto">
-                                            <h5 class="text-black d-inline-block me-2">
-                                                19 Mei
-                                            </h5>
-                                        </div>
-                                    </div> -->
                                 </div>
                                 <!-- Divider -->
                                 <hr class="text-black">
@@ -56,6 +49,37 @@
             </div>
         </div>
     </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    function checkUnreadMessages() {
+        fetch('?controller=c_notifikasi&method=getUnreadCount')
+            .then(response => response.json())
+            .then(data => {
+                const notificationBadge = document.querySelector('.nav-link.link-dark .badge');
+                if (data.unread_count > 0) {
+                    if (notificationBadge) {
+                        notificationBadge.textContent = data.unread_count;
+                    } else {
+                        const badge = document.createElement('span');
+                        badge.className = 'badge bg-danger rounded-pill';
+                        badge.textContent = data.unread_count;
+                        document.querySelector('.nav-link.link-dark').appendChild(badge);
+                    }
+                } else if (notificationBadge) {
+                    notificationBadge.remove();
+                }
+            })
+            .catch(error => console.error('Error fetching unread count:', error));
+    }
+
+    // Check for unread messages every 30 seconds
+    setInterval(checkUnreadMessages, 10000);
+
+    // Initial check on page load
+    checkUnreadMessages();
+});
+</script>
 
 </body>
 </html>

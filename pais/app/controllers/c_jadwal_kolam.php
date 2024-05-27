@@ -69,9 +69,13 @@ class c_jadwal_kolam extends Controller {
 
         $data['takaranAll'] = $jadwalKolam->getDataTakaranAll();
         unset($jadwal); 
+
+        $pesanModel = $this->model('m_pesan');
+        $data['unread_count'] = $pesanModel->countUnread();
+
         // Memuat view dengan data yang telah diproses
         $this->view('user/jadwal_kolam', $data);  
-        $this->view('template/sidebar');
+        $this->view('template/sidebar', $data);
     }
 
     public function cardJadwal()
@@ -165,5 +169,12 @@ class c_jadwal_kolam extends Controller {
         } else {
             echo json_encode([]);
         }
+    }
+
+    public function getUnreadCount()
+    {
+        $pesanModel = $this->model('m_pesan');
+        $unreadCount = $pesanModel->countUnread();
+        echo json_encode(['unread_count' => $unreadCount]);
     }
 }

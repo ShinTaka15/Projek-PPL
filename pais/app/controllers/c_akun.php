@@ -28,9 +28,18 @@ class c_akun extends Controller {
             }
         }
         
+        $pesanModel = $this->model('m_pesan');
+        $data['unread_count'] = $pesanModel->countUnread();
 
         $this->view('user/akun', $data);
-        $this->view('template/sidebar');
+        $this->view('template/sidebar', $data);
+    }
+
+    public function getUnreadCount()
+    {
+        $pesanModel = $this->model('m_pesan');
+        $unreadCount = $pesanModel->countUnread();
+        echo json_encode(['unread_count' => $unreadCount]);
     }
 
 }

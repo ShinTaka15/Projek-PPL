@@ -54,7 +54,7 @@
       Swal.fire({
         icon: 'error',
         title: 'Gagal!',
-        text: 'Nama pengguna atau kata sandi salah'
+        text: 'Silahkan isi kembali'
       });
     }
   </script>

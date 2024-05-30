@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Apr 2024 pada 07.24
+-- Waktu pembuatan: 30 Bulan Mei 2024 pada 05.08
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -41,8 +41,11 @@ CREATE TABLE `jadwal` (
 --
 
 INSERT INTO `jadwal` (`id_jadwal`, `waktu`, `is_active`, `id_kolam`, `id_takaran`, `id_user`) VALUES
-(1, '08:30:00', 1, 1, 1, 1),
-(2, '16:15:00', 1, 1, 1, 1);
+(1, '12:41:00', 1, 1, 1, 1),
+(2, '12:38:00', 1, 1, 2, 1),
+(3, '12:04:00', 1, 1, 1, 1),
+(4, '12:12:00', 0, 1, 2, 1),
+(5, '12:11:00', 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -65,38 +68,27 @@ INSERT INTO `kolam` (`id_kolam`, `nama_kolam`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `laporan`
---
-
-CREATE TABLE `laporan` (
-  `id_laporan` int(11) NOT NULL,
-  `tanggal` date NOT NULL,
-  `id_jadwal` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `notifikasi`
 --
 
 CREATE TABLE `notifikasi` (
   `id_notifikasi` int(11) NOT NULL,
   `pesan` varchar(200) NOT NULL,
-  `id_user` int(11) NOT NULL
+  `id_user` int(11) NOT NULL,
+  `is_read` tinyint(1) DEFAULT 0,
+  `tanggal` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Struktur dari tabel `stok-pakan`
+-- Dumping data untuk tabel `notifikasi`
 --
 
-CREATE TABLE `stok-pakan` (
-  `id_stok` int(11) NOT NULL,
-  `jumlah_stok` int(11) NOT NULL,
-  `id_kolam` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `notifikasi` (`id_notifikasi`, `pesan`, `id_user`, `is_read`, `tanggal`) VALUES
+(1, 'Segera isi kembali pakan! Stok hampir habis.', 1, 1, '2024-05-29 15:41:03'),
+(2, 'Segera isi kembali pakan! Stok hampir habis.', 1, 1, '2024-05-29 15:41:03'),
+(3, 'Segera isi kembali pakan! Stok hampir habis.', 1, 1, '2024-05-29 15:41:03'),
+(4, 'Segera isi kembali pakan! Stok hampir habis.', 1, 1, '2024-05-29 15:41:03'),
+(23, 'Segera isi kembali pakan! Stok hampir habis.', 1, 1, '2024-05-29 15:52:24');
 
 -- --------------------------------------------------------
 
@@ -156,25 +148,11 @@ ALTER TABLE `kolam`
   ADD PRIMARY KEY (`id_kolam`);
 
 --
--- Indeks untuk tabel `laporan`
---
-ALTER TABLE `laporan`
-  ADD PRIMARY KEY (`id_laporan`),
-  ADD KEY `id_jadwal` (`id_jadwal`);
-
---
 -- Indeks untuk tabel `notifikasi`
 --
 ALTER TABLE `notifikasi`
   ADD PRIMARY KEY (`id_notifikasi`),
   ADD KEY `id_user` (`id_user`);
-
---
--- Indeks untuk tabel `stok-pakan`
---
-ALTER TABLE `stok-pakan`
-  ADD PRIMARY KEY (`id_stok`),
-  ADD KEY `id_kolam` (`id_kolam`);
 
 --
 -- Indeks untuk tabel `takaran`
@@ -196,7 +174,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `kolam`
@@ -205,22 +183,10 @@ ALTER TABLE `kolam`
   MODIFY `id_kolam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `laporan`
---
-ALTER TABLE `laporan`
-  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT untuk tabel `notifikasi`
 --
 ALTER TABLE `notifikasi`
-  MODIFY `id_notifikasi` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `stok-pakan`
---
-ALTER TABLE `stok-pakan`
-  MODIFY `id_stok` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_notifikasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `takaran`
@@ -247,22 +213,10 @@ ALTER TABLE `jadwal`
   ADD CONSTRAINT `jadwal_ibfk_3` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
--- Ketidakleluasaan untuk tabel `laporan`
---
-ALTER TABLE `laporan`
-  ADD CONSTRAINT `laporan_ibfk_1` FOREIGN KEY (`id_jadwal`) REFERENCES `jadwal` (`id_jadwal`);
-
---
 -- Ketidakleluasaan untuk tabel `notifikasi`
 --
 ALTER TABLE `notifikasi`
   ADD CONSTRAINT `notifikasi_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
-
---
--- Ketidakleluasaan untuk tabel `stok-pakan`
---
-ALTER TABLE `stok-pakan`
-  ADD CONSTRAINT `stok-pakan_ibfk_1` FOREIGN KEY (`id_kolam`) REFERENCES `kolam` (`id_kolam`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

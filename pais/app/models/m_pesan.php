@@ -1,7 +1,6 @@
 <?php 
 
 class m_pesan {
-
     private $db;
 
     public function __construct()
@@ -17,7 +16,7 @@ class m_pesan {
     }
 
     public function insertPesan($message) {
-        $insertQuery = "INSERT INTO notifikasi (pesan, id_user, is_read) VALUES (:pesan, 1, 0)";
+        $insertQuery = "INSERT INTO notifikasi (pesan, id_user, is_read, tanggal) VALUES (:pesan, 1, 0, CURRENT_TIMESTAMP)";
         $this->db->query($insertQuery);
         $this->db->bind(':pesan', $message);
         return $this->db->execute();

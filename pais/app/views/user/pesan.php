@@ -14,11 +14,21 @@
             width: 800px;
             height: 600px;
         }
-    
+
         .custom-card-child {
             height: 500px;
         }
-        </style>
+
+        .unread {
+            color: black;
+            font-weight: bold;
+        }
+
+        .read {
+            color: grey;
+            font-weight: normal;
+        }
+    </style>
 </head>
 <body>
     <!-- Main content -->
@@ -36,8 +46,9 @@
                         style="background-color: #FFFFFF; overflow-y: auto; max-height: 500px;">
                         <div class="card-body" id="reloadcard">
                                 <?php foreach ($data['notifikasi'] as $pesan): ?>
-                                <div class="d-flex justify-content-between ms-3 me-3">
-                                    <h5 class="text-black"><?php echo $pesan['pesan']; ?></h5>
+                                <div class="d-flex justify-content-between ms-3 me-3 <?php echo $pesan['is_read'] == 0 ? 'unread' : 'read'; ?>">
+                                    <p class="text-black fs-5"><?php echo $pesan['pesan']; ?></p>
+                                    <small class="text-muted"><?php echo $pesan['tanggal']; ?></small>
                                 </div>
                                 <!-- Divider -->
                                 <hr class="text-black">
@@ -73,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error fetching unread count:', error));
     }
 
-    // Check for unread messages every 30 seconds
+    // Check for unread messages every 10 seconds
     setInterval(checkUnreadMessages, 10000);
 
     // Initial check on page load

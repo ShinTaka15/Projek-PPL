@@ -72,7 +72,7 @@ function confirmLogout() {
 }).then((result) => {
     if (result.isConfirmed) {
         sessionStorage.setItem('logoutSuccess', 'true'); // Simpan status logout ke sessionStorage
-        window.location.href = "?controller=c_login&method=showLandingPage"; // Ganti URL_LANDING_PAGE dengan URL sebenarnya dari landing page Anda
+        window.location.href = "?controller=c_landing_page&method=showLandingPage"; // Ganti URL_LANDING_PAGE dengan URL sebenarnya dari landing page Anda
     }
 });
 }
